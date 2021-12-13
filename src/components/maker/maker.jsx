@@ -20,7 +20,7 @@ export default function Maker() {
       id: "2",
       name: "Kyu2",
       company: "Samsung",
-      theme: "light",
+      theme: "dark",
       title: "Software Engineer",
       email: "kyu@email.com",
       message: "go for it",
@@ -31,12 +31,12 @@ export default function Maker() {
       id: "3",
       name: "Kyu3",
       company: "Samsung",
-      theme: "light",
+      theme: "colorful",
       title: "Software Engineer",
       email: "kyu@email.com",
       message: "go for it",
       fileName: "kyu",
-      fileURL: "kyu.png"
+      fileURL: null
     }
   ])
 
