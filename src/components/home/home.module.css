@@ -1,34 +1,32 @@
-@value makerGreen, makerBlack, makerWhite, makerAccent, makerNavbar, makerWhiteGrey from '../../common/colors.css';
-
+@value makerWhite, makerNavbar, makerAccent from '../../common/colors.css';
 
 .home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 90vh;
   padding: 40px;
+  padding-top: 60px;
   text-align: center;
 }
 
 .home_image {
   width: 800px;
   height: 400px;
-  border-radius: 50%;
-  border: 2px solid var(--color-light-white);
 }
 
-.home__title,
-.home__description {
-  color: var(--color-black);
-}
-
-.home__contact {
-  color: var(--color-navbar);
-  font-size: var(--font-regular);
-  font-weight: var(--weight-semi-bold);
+.home_maker {
+  color: makerWhite;
+  font-size: 20px;
+  font-weight: bold;
   margin: 24px;
   padding: 12px 18px;
-  border: 2px solid var(--color-white);
-  border-radius: var(--size-border-radius);
+  background: makerNavbar;
+  border-radius: 4px;
+  border: none;
 }
 
-.home__contact:hover {
-  background-color: var(--color-dark-pink);
+.home_maker:hover {
+  background: makerAccent;
+  cursor: pointer;
 }
