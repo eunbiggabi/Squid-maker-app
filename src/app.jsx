@@ -1,9 +1,19 @@
 import styles from './app.module.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Header from './components/header/navbar/navbar'
+import Home from './components/home/home'
+import Maker from './components/maker/add/add'
 
 function App() {
   return (
     <div className={styles.app}>
-      <h1>Squid Note</h1>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/home" element={<Home />}/>
+          <Route path="/maker" element={<Maker />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
