@@ -1,0 +1,11 @@
+import styles from './editor.module.css'
+import CardAddForm from './card_add_form/card_add_form'
+
+export default function Editor() {
+  return (
+    <section className={styles.editor}>
+      <h1 className={styles.title}>Card Maker</h1>
+      <CardAddForm />
+    </section>
+  )
+}

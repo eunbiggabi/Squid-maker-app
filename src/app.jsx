@@ -2,7 +2,7 @@ import styles from './app.module.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/header/navbar/navbar'
 import Home from './components/home/home'
-import Maker from './components/maker/add/add'
+import Maker from './components/maker/maker'
 
 function App() {
   return (
