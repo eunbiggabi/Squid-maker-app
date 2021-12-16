@@ -1,12 +1,11 @@
-import React from 'react'
-import styles from './card.module.css'
+import styles from './search_card.module.css'
 
-export default function Card({card}) {
+export default function SearchCard({card}) {
   const DEFAULT_IMAGE = "/images/defualt.jpg"
   const {name, company, title, email, message, theme, fileName, fileURL} = card;
   const url = fileURL || DEFAULT_IMAGE;
   return (
-    <li className={`${styles.card} ${getStyles(theme)}`}>
+    <li className={`${styles.card}`}>
       <img className={styles.avatar} src={url} alt="profile" />
       <div className={styles.info}>
         <h1 className={styles.name}>{name}</h1>
@@ -19,15 +18,15 @@ export default function Card({card}) {
   )
 }
 
-function getStyles(theme) {
-  switch (theme) {
-    case 'dark':
-      return styles.dark;
-    case 'light':
-      return styles.light;
-    case 'colorful':
-      return styles.colorful;
-    default:
-      throw new Error(`unknown theme: ${theme}`);
-  }
-}
+// function getStyles(theme) {
+//   switch (theme) {
+//     case 'dark':
+//       return styles.dark;
+//     case 'light':
+//       return styles.light;
+//     case 'colorful':
+//       return styles.colorful;
+//     default:
+//       throw new Error(`unknown theme: ${theme}`);
+//   }
+// }

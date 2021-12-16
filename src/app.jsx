@@ -63,6 +63,16 @@ function App() {
     setCards(updated);
   };
 
+  const onSearch = (card) => {
+    // const updated = cards.map(item => {
+    //   if (card.name === item.name) {
+    //     return card;
+    //   }
+    //   return "not find"
+    // });
+    // setCards(updated);
+  };
+
   return (
     <div className={styles.app}>
       <BrowserRouter>
@@ -82,11 +92,7 @@ function App() {
           />
           <Route
             path="/search"
-            element={
-              <Search
-                cards={cards}
-              />
-            }
+            element={<Search cards={cards} onSearch={onSearch} />}
           />
         </Routes>
       </BrowserRouter>
