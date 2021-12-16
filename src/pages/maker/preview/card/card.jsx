@@ -3,8 +3,9 @@ import styles from './card.module.css'
 
 export default function Card({card}) {
   const DEFAULT_IMAGE = "/images/defualt.jpg"
-  const {name, company, title, email, message, theme, fileName, fileURL} = card;
   const url = fileURL || DEFAULT_IMAGE;
+  const {name, company, title, email, message, theme, fileName, fileURL} = card;
+  
   return (
     <li className={`${styles.card} ${getStyles(theme)}`}>
       <img className={styles.avatar} src={url} alt="profile" />
