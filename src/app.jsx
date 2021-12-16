@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/header/navbar/navbar";
 import Home from "./pages/home/home";
 import Maker from "./pages/maker/maker";
+import Search from "./pages/search/search";
 import styles from "./app.module.css";
 
 function App() {
@@ -76,6 +77,14 @@ function App() {
                 addCard={addCard}
                 updateCard={updateCard}
                 deleteCard={deleteCard}
+              />
+            }
+          />
+          <Route
+            path="/search"
+            element={
+              <Search
+                cards={cards}
               />
             }
           />

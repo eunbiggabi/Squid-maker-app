@@ -1,0 +1,36 @@
+@value makerAccent, makerWhite, makerWhiteGrey, makerGreen from '../../common/colors.css';
+
+.search {
+  display: flex;
+  height: 6rem;
+  padding: 1.3em 1em;
+  background: makerGreen;
+  color: white;
+}
+
+.logo_container {
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.input {
+  flex-basis: 100%;
+  font-size: 1.2rem;
+  outline: 0;
+}
+
+.button {
+  background-color: makerWhiteGrey;
+  color: makerBlack;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5em;
+  flex: 1 1 20%;
+  font-size: 1rem;
+  outline: none;
+}
+
+.button:hover {
+  opacity: 0.8;
+}

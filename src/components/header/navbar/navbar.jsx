@@ -10,7 +10,7 @@ export default function Navber() {
       <ul className={styles.navbar_menu}>
         <li className={styles.menu}><a href="/home">Home</a></li>
         <li className={styles.menu}><a href="/maker">Maker</a></li>
-        <li className={styles.menu}><a href="/serch">Search</a></li>
+        <li className={styles.menu}><a href="/search">Search</a></li>
         <li className={styles.menu}><a href="/serch">LogIn</a></li>
         <li className={styles.menu}><a href="/serch">SignUp</a></li>
       </ul>
