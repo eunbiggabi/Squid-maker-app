@@ -1,6 +1,6 @@
 import styles from './search_card.module.css'
 
-export default function SearchCard({card}) {
+export default function SearchCard({card, onSearch}) {
   const DEFAULT_IMAGE = "/images/defualt.jpg"
   const {name, company, title, email, message, theme, fileName, fileURL} = card;
   const url = fileURL || DEFAULT_IMAGE;

@@ -7,7 +7,7 @@ export default function Search({cards, onSearch}) {
   return (
     <section className={styles.search}>
       <SearchHeader onSearch={onSearch}/>
-      <SearchInfo cards={cards} />
+      <SearchInfo cards={cards} onSearch={onSearch}/>
     </section>
   )
 }

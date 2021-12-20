@@ -71,6 +71,7 @@ function App() {
     //   return "not find"
     // });
     // setCards(updated);
+    console.log(card)
   };
 
   return (
