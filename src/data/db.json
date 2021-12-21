@@ -1,0 +1,31 @@
+{
+  "cards":[
+    {
+      "id" : 1,
+      "name": "Kyu",
+      "company": "Google",
+      "theme": "light",
+      "title": "Software developer",
+      "email": "kyu@email.com",
+      "text": "go for it"
+    },
+    {
+      "id" : 2,
+      "name": "Chloe",
+      "company": "Samsung",
+      "theme": "dark",
+      "title": "Admin",
+      "email": "chloe@email.com",
+      "text": "let's go"
+    },
+    {
+      "id" : 3,
+      "name": "Mike",
+      "company": "Coles",
+      "theme": "colorful",
+      "title": "Sales",
+      "email": "mike@email.com",
+      "text": "gogo"
+    }
+  ]
+}
