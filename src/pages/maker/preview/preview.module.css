@@ -1,5 +1,9 @@
+@value makerWhite, makerWhiteGrey from '../../../common/colors.css';
+
 .preview {
   flex-basis: 50%;
+  height: 100vh;
+  background: makerWhiteGrey;
 }
 
 .title {

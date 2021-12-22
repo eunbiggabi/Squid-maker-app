@@ -1,47 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import axios from "axios";
 import Header from "./components/header/navbar/navbar";
 import Home from "./pages/home/home";
 import Maker from "./pages/maker/maker";
 import Search from "./pages/search/search";
 import styles from "./app.module.css";
+import UseFetch from "./data/useFetch";
 
 function App() {
-  const [cards, setCards] = useState([
-    {
-      id: "1",
-      name: "Kyu",
-      company: "Samsung",
-      theme: "light",
-      title: "Software Engineer",
-      email: "kyu@email.com",
-      message: "go for it",
-      fileName: "kyu",
-      fileURL: "kyu.png",
-    },
-    {
-      id: "2",
-      name: "Kyu2",
-      company: "Samsung",
-      theme: "dark",
-      title: "Software Engineer",
-      email: "kyu@email.com",
-      message: "go for it",
-      fileName: "kyu",
-      fileURL: "kyu.png",
-    },
-    {
-      id: "3",
-      name: "Kyu3",
-      company: "Samsung",
-      theme: "colorful",
-      title: "Software Engineer",
-      email: "kyu@email.com",
-      message: "go for it",
-      fileName: "kyu",
-      fileURL: null,
-    },
-  ]);
+  const [cards, setCards] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [searched, setSearched] = useState([]);
+  const url = "http://localhost:8000/cards";
+
+  useEffect(() => {
+    axios
+      .get(url)
+      .then((response) => {
+        console.log(response);
+        setCards(response.data);
+      })
+      .catch((err) => {
+        setError(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [url]);
 
   const addCard = (card) => {
     const updated = [...cards, card];
@@ -63,20 +50,41 @@ function App() {
     setCards(updated);
   };
 
-  const onSearch = (card) => {
-    // const updated = cards.map(item => {
-    //   if (card.name === item.name) {
-    //     return card;
-    //   }
-    //   return "not find"
-    // });
-    // setCards(updated);
-    console.log(card)
+  const onSearch = async (card) => {
+    console.log(card);
+    try {
+      const response = await fetch(`http://localhost:8000/cards/${card}`);
+      const data = await response.json();
+      setSearched(data);
+    } catch (err) {
+      setError(err);
+    }
   };
+
+  useEffect(() => {
+    onSearch()
+  }, [])
+
+  // const fetchRandomFood = async () => {
+  //   try {
+  //     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${singleFood}`);
+  //     let data = await response.json();
+  //     setSingleFood(data.meals[0]);
+  //   } catch (err) {
+  //     setError(
+  //       `Something went wrong, please visit other pages and come back later. ${err.message}`
+  //     );
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchRandomFood();
+  // }, [showSearchedFood]);
 
   return (
     <div className={styles.app}>
       <BrowserRouter>
+        {/* <button onClick={getCards}>check</button> */}
         <Header />
         <Routes>
           <Route path="/home" element={<Home />} />
