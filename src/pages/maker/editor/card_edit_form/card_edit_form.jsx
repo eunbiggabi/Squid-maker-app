@@ -11,7 +11,7 @@ export default function CardEditForm({ card, updateCard, deleteCard }) {
   const emailRef = useRef();
   const messageRef = useRef();
 
-  const { name, company, title, email, message, theme, fileName } = card;
+  const { name, company, title, email, message, theme } = card;
 
   const onChange = (event) => {
     if (event.currentTarget == null){

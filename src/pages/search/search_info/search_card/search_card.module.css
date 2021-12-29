@@ -1,6 +1,30 @@
 @value makerBlack, makerWhite, makerColorful, makerShadow, makerWheat from '../../../../common/colors.css';
 
-.card {
+/* export const StyledCard = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  margin: 40px 0;
+  padding: 60px;
+  flex-direction: ${({ layout }) => layout || 'row'};
+
+  img {
+    width: 80%;
+  }
+
+  & > div {
+    flex: 1;
+  }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    flex-direction: column;
+  }
+` */
+
+
+/* .card {
   display: flex;
   align-items: center;
   width: 100%;
@@ -9,19 +33,16 @@
   padding: 0.2em 0;
   box-shadow: 6px 6px 8px 0px makerShadow;
   max-width: 30rem;
-}
+} */
 
-.card.dark {
-  background-color: makerBlack;
-  color: makerWhite;
-}
-
-.card.light {
-  background-color: makerWhite;
-  color: makerBlack;
-}
-.card.colorful {
-  background: makerColorful;
+.card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  margin: 40px 0;
+  padding: 60px;
 }
 
 .avatar {

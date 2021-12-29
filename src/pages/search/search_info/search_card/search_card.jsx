@@ -1,8 +1,8 @@
 import styles from './search_card.module.css'
 
-export default function SearchCard({card, onSearch}) {
+export default function SearchCard({cards, searchedCard}) {
   const DEFAULT_IMAGE = "/images/defualt.jpg"
-  const {name, company, title, email, message, theme, fileName, fileURL} = card;
+  const {name, company, title, email, message, theme, fileName, fileURL} = searchedCard;
   const url = fileURL || DEFAULT_IMAGE;
   return (
     <li className={`${styles.card}`}>
@@ -17,16 +17,3 @@ export default function SearchCard({card, onSearch}) {
     </li>
   )
 }
-
-// function getStyles(theme) {
-//   switch (theme) {
-//     case 'dark':
-//       return styles.dark;
-//     case 'light':
-//       return styles.light;
-//     case 'colorful':
-//       return styles.colorful;
-//     default:
-//       throw new Error(`unknown theme: ${theme}`);
-//   }
-// }
