@@ -1,4 +1,11 @@
-@value makerAccent, makerNavbar, makerWhiteGrey from '../../../common/colors.css';
+
+
+
+
+
+
+/* @value makerAccent, makerNavbar, makerWhiteGrey from '../../../common/colors.css';
+@value mediaQuery from '../../../common/size.css';
 
 a {
   color: makerWhiteGrey;
@@ -13,7 +20,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: makerWhiteGrey;
   position: sticky;
   top: 0;
@@ -44,6 +51,9 @@ a {
   display: flex;
   list-style: none;
   padding-left: 0;
+  position: relative;
+
+  
 }
 
 .menu a {
@@ -54,3 +64,34 @@ a {
   background-color: makerAccent;
   border-radius: 4px;
 }
+
+.navbar_toggleBtn {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  font-size: 24px;
+  display: none;
+} */
+
+/* @media screen and (max-width: mediaQuery) {
+  .navbar {
+    flex-direction: column;
+    padding: 20px 24px;
+    align-items: flex-start;
+  }
+
+  .navbar_menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar_toggleBtn {
+    display: block;
+  }
+
+  .navbar_menu.active {
+    display: flex;
+  } */
+/* } */

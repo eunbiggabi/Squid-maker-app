@@ -18,7 +18,6 @@ function App() {
     axios
       .get(url)
       .then((response) => {
-        console.log(response);
         setCards(response.data);
       })
       .catch((err) => {
@@ -49,16 +48,9 @@ function App() {
     setCards(updated);
   };
 
-
-
-  // useEffect(() => {
-  //   onSearch()
-  // }, [])
-
   return (
     <div className={styles.app}>
       <BrowserRouter>
-        {/* <button onClick={getCards}>check</button> */}
         <Header />
         <Routes>
           <Route path="/home" element={<Home />} />
