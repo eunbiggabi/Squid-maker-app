@@ -6,12 +6,13 @@ import Home from "./pages/home/home";
 import Maker from "./pages/maker/maker";
 import Search from "./pages/search/search";
 import styles from "./app.module.css";
+import SignUp from "./pages/sign_up/sign_up";
+import LogIn from "./pages/log_in/log_in";
 
 function App() {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [searched, setSearched] = useState([]);
   const url = "http://localhost:8000/cards";
 
   useEffect(() => {
@@ -65,10 +66,9 @@ function App() {
               />
             }
           />
-          <Route
-            path="/search"
-            element={<Search cards={cards} />}
-          />
+          <Route path="/search" element={<Search cards={cards} />} />
+          <Route path="/log_in" element={<LogIn />} />
+          <Route path="/sign_up" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
     </div>

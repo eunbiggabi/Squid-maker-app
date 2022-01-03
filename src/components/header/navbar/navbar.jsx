@@ -17,8 +17,8 @@ export default function Navbar() {
         <MenuLink href="/home">Home</MenuLink>
         <MenuLink href="/maker">Maker</MenuLink>
         <MenuLink href="/search">Search</MenuLink>
-        <MenuLink href="">LogIn</MenuLink>
-        <MenuLink href="">SignUp</MenuLink>
+        <MenuLink href="/log_in">LogIn</MenuLink>
+        <MenuLink href="/sign_up">SignUp</MenuLink>
       </Menu>
 
       <Hamburger onClick={() => setIsOpen(!isOpen)}>
