@@ -3,16 +3,32 @@
 
 .search {
   display: flex;
-  height: 6rem;
+  height: 12rem;
   padding: 1.3em 1em;
   background: makerGreen;
   color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .input {
   flex-basis: 100%;
   font-size: 1.2rem;
   outline: 0;
+  margin-bottom: 1rem;
+}
+
+.logo_container,
+.input,
+.button {
+  width: 100%;
+  max-width: 1000px;
 }
 
 .button {
@@ -35,21 +51,5 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 12rem;
-  }
-
-  .title {
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  .logo_container,
-  .input,
-  .button {
-    width: 100%;
-  }
-
-  .input {
-    margin-bottom: 1rem;
   }
 }

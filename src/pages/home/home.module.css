@@ -1,18 +1,18 @@
 @value makerWhite, makerNavbar, makerAccent from '../../common/colors.css';
+@value mediaQuery from '../../common/size.css';
 
 .home {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 92.3vh;
-  padding: 40px;
-  padding-top: 60px;
+  height: 100vh;
+  padding: 0 3em;
   text-align: center;
 }
 
 .home_image {
   width: 800px;
-  height: 400px;
+  height: 300px;
 }
 
 .home_maker {
@@ -29,4 +29,10 @@
 .home_maker:hover {
   background: makerAccent;
   cursor: pointer;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .home_image {
+    width: 100%;
+  }
 }

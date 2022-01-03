@@ -42,7 +42,7 @@ export default function Search({ cards }) {
     <section className={styles.search}>
       <SearchHeader onSearch={onSearch} />
       {loading && <div>Loading...</div>}
-      {error && <div>{error}</div>} 
+      {error && <div className={styles.error}>{error}</div>} 
       {searched && (
         <SearchInfo
           cards={cards}

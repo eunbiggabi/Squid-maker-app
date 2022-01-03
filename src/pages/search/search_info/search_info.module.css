@@ -1,8 +1,23 @@
+.preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+
 .cards {
   padding-left: 0;
   margin: 0 2rem;
 }
 
+.cards,
+.title {
+  max-width: 1000px;
+  width: 100%;
+}
+
 .title {
   text-align: center;
+  padding-top: 2rem;
 }
