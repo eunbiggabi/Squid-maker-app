@@ -8,6 +8,7 @@ import Search from "./pages/search/search";
 import styles from "./app.module.css";
 import SignUp from "./pages/sign_up/sign_up";
 import LogIn from "./pages/log_in/log_in";
+import { getdata } from "./services/cardsServices";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -16,18 +17,29 @@ function App() {
   const url = "http://localhost:8000/cards";
 
   useEffect(() => {
-    axios
-      .get(url)
-      .then((response) => {
-        setCards(response.data);
+    getdata()
+      .then((cards) => {
+        console.log(cards);
+        setCards(cards);
       })
-      .catch((err) => {
-        setError(err);
-      })
-      .finally(() => {
-        setLoading(false);
+      .catch((error) => {
+        console.log(error);
       });
-  }, [url]);
+  }, []);
+
+  // useEffect(() => {
+  //   axios
+  //     .get(url)
+  //     .then((response) => {
+  //       setCards(response.data);
+  //     })
+  //     .catch((err) => {
+  //       setError(err);
+  //     })
+  //     .finally(() => {
+  //       setLoading(false);
+  //     });
+  // }, [url]);
 
   const addCard = (card) => {
     const updated = [...cards, card];
