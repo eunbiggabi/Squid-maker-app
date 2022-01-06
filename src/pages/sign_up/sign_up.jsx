@@ -10,6 +10,13 @@ export default function SignUp() {
         <h2 className={styles.title}>Sign Up</h2>
         <input
           className={styles.input}
+          type="text"
+          name="username"
+          placeholder="username"
+          onChange={onChange}
+        />
+        <input
+          className={styles.input}
           type="email"
           name="email"
           placeholder="email"
@@ -31,7 +38,6 @@ export default function SignUp() {
         />
         <button className={styles.btn}>Sign Up</button>
       </div>
-      
     </form>
   );
 }
