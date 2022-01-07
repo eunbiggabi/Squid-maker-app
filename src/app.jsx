@@ -1,6 +1,5 @@
 import { useState, useEffect, useReducer } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/header/navbar/navbar";
 import Home from "./pages/home/home";
 import Maker from "./pages/maker/maker";
@@ -11,15 +10,17 @@ import LogIn from "./pages/log_in/log_in";
 import { getdata } from "./services/cardsServices";
 import NotFound from "./errors/not_found";
 import { StateContext } from "./utils/stateContext";
-import reducer from "./utils/reducer";
+import { userReducer } from "./utils/reducer";
 
 function App() {
+  let navigate = Navigate();
+
   const initialstate = {
     loggedInUser: sessionStorage.getItem("username") || null,
     auth: { token: sessionStorage.getItem("token") || null },
   };
 
-  const [store, dispatch] = useReducer(reducer, initialstate);
+  const [store, dispatch] = useReducer(userReducer, initialstate);
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
