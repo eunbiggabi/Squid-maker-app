@@ -17,16 +17,9 @@ export default function LogIn() {
         />
         <input
           className={styles.input}
-          type="passward"
-          name="passward"
+          type="password"
+          name="password"
           placeholder="passward"
-          onChange={onChange}
-        />
-        <input
-          className={styles.input}
-          type="passward_confirmation"
-          name="passward_confirmation"
-          placeholder="passward confirmation"
           onChange={onChange}
         />
         <button className={styles.btn}>Log In</button>

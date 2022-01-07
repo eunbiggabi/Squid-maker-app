@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Header from "./components/header/navbar/navbar";
@@ -9,8 +9,17 @@ import styles from "./app.module.css";
 import SignUp from "./pages/sign_up/sign_up";
 import LogIn from "./pages/log_in/log_in";
 import { getdata } from "./services/cardsServices";
+import NotFound from "./errors/not_found";
+import { StateContext } from "./utils/stateContext";
+import reducer from "./utils/reducer";
 
 function App() {
+  const initialstate = {
+    loggedInUser: sessionStorage.getItem("username") || null,
+    auth: { token: sessionStorage.getItem("token") || null },
+  };
+
+  const [store, dispatch] = useReducer(reducer, initialstate);
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -63,26 +72,29 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route
-            path="/maker"
-            element={
-              <Maker
-                cards={cards}
-                addCard={addCard}
-                updateCard={updateCard}
-                deleteCard={deleteCard}
-              />
-            }
-          />
-          <Route path="/search" element={<Search cards={cards} />} />
-          <Route path="/log_in" element={<LogIn />} />
-          <Route path="/sign_up" element={<SignUp />} />
-        </Routes>
-      </BrowserRouter>
+      <StateContext.Provider value={{ store, dispatch }}>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route
+              path="/maker"
+              element={
+                <Maker
+                  cards={cards}
+                  addCard={addCard}
+                  updateCard={updateCard}
+                  deleteCard={deleteCard}
+                />
+              }
+            />
+            <Route path="/search" element={<Search cards={cards} />} />
+            <Route path="/log_in" element={<LogIn />} />
+            <Route path="/sign_up" element={<SignUp />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </StateContext.Provider>
     </div>
   );
 }

@@ -1,4 +1,6 @@
-import React from "react";
+// import React, { useState } from 'react'
+// import { useGlobalState } from '../utils/stateContext'
+// import { signUp } from '../services/authServices'
 import styles from "./sign_up.module.css";
 
 export default function SignUp() {
@@ -24,16 +26,16 @@ export default function SignUp() {
         />
         <input
           className={styles.input}
-          type="passward"
-          name="passward"
+          type="password"
+          name="password"
           placeholder="passward"
           onChange={onChange}
         />
         <input
           className={styles.input}
-          type="passward_confirmation"
-          name="passward_confirmation"
-          placeholder="passward confirmation"
+          type="password"
+          name="password_confirmation"
+          placeholder="password confirmation"
           onChange={onChange}
         />
         <button className={styles.btn}>Sign Up</button>

@@ -1,24 +1,59 @@
 import { useState } from "react";
-import styled from "styled-components";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Nav, Logo, Hamburger, Menu, MenuLink, NavbarLogoContainer, LogoName } from "./navbar.styled";
+import {
+  Nav,
+  Logo,
+  Hamburger,
+  Menu,
+  MenuLink,
+  NavbarLogoContainer,
+  LogoName,
+} from "./navbar.styled";
+import { useGlobalState } from "../../../utils/stateContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { store, dispatch } = useGlobalState();
+  const { loggedInUser } = store;
+
+  function logout(e) {
+    e.preventDefault();
+    console.log("log out");
+    sessionStorage.clear();
+    // activateUser("");
+    dispatch({
+      type: "setLoggedInUser",
+      data: "",
+    });
+    dispatch({
+      type: "setToken",
+      data: "",
+    });
+  }
 
   return (
     <Nav>
       <NavbarLogoContainer>
-        <Logo src="images/squid.png" alt="logo" /> 
+        <Logo src="images/squid.png" alt="logo" />
         <LogoName href="/home">Squid Maker</LogoName>
       </NavbarLogoContainer>
-    
+
       <Menu isOpen={isOpen}>
         <MenuLink href="/home">Home</MenuLink>
         <MenuLink href="/maker">Maker</MenuLink>
         <MenuLink href="/search">Search</MenuLink>
-        <MenuLink href="/log_in">LogIn</MenuLink>
-        <MenuLink href="/sign_up">SignUp</MenuLink>
+        {loggedInUser ? (
+          <>
+            <MenuLink href="/home" onClick={logout}>
+              LogOut
+            </MenuLink>
+          </>
+        ) : (
+          <>
+            <MenuLink href="/log_in">LogIn</MenuLink>
+            <MenuLink href="/sign_up">SignUp</MenuLink>
+          </>
+        )}
       </Menu>
 
       <Hamburger onClick={() => setIsOpen(!isOpen)}>
