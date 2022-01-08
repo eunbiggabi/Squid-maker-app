@@ -32,32 +32,6 @@
       "message": "oh no~!",
       "fileName": "mike",
       "fileURL": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-    },
-    {
-      "name": "Sammi",
-      "company": "Apple",
-      "title": "Accountant",
-      "email": "sammi@email.com",
-      "message": "I don't want to go work",
-      "id": 4
-    },
-    {
-      "id": 5,
-      "name": "Lucas",
-      "company": "Gooogle",
-      "title": "Manager",
-      "email": "lucas@email.com",
-      "message": "Gogogo",
-      "theme_id": 10
-    },
-    {
-      "id": 6,
-      "name": "bong",
-      "company": "Gooogle",
-      "title": "Manager",
-      "email": "bong@email.com",
-      "message": "bongbong",
-      "theme_id": 11
     }
   ]
 }

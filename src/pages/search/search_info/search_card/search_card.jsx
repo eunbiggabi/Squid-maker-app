@@ -1,8 +1,8 @@
 import styles from './search_card.module.css'
 
-export default function SearchCard({cards, searchedCard}) {
+export default function SearchCard({card, cards, searched, searchedCard, searchTerm}) {
   const DEFAULT_IMAGE = "/images/defualt.jpg"
-  const {name, company, title, email, message, theme, fileName, fileURL} = searchedCard;
+  const {name, company, title, email, message, theme, fileName, fileURL} = card;
   const url = fileURL || DEFAULT_IMAGE;
   return (
     <li className={`${styles.card}`}>
