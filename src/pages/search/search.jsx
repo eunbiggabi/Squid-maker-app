@@ -41,7 +41,7 @@ export default function Search({ cards }) {
   return (
     <section className={styles.search}>
       <SearchHeader onSearch={onSearch} />
-      {loading && <div>Loading...</div>}
+      {/* {loading && <div>Loading...</div>} */}
       {error && <div className={styles.error}>{error}</div>} 
       {searched && (
         <SearchInfo
