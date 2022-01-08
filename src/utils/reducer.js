@@ -21,11 +21,22 @@ export function userReducer(state, action) {
 
 // export function cardReducer(state, action) {
 //     switch (action.type) {
-//         case ""
-//     }
-// }
+//         case "addCard" : {
+//             return {
 
-// return{
-//     ...state,
-//     messageList:[action.data, ...state.messageList]
+//             }
+//         }
+
+//         case "updateCard" : {
+//             return {
+
+//             }
+//         }
+
+//         case "deleteCard" : {
+//             return {
+
+//             }
+//         }
+//     }
 // }

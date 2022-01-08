@@ -22,7 +22,7 @@ function App() {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const url = "http://localhost:8000/cards";
+  const url = "http://localhost:7000/cards";
 
   useEffect(() => {
     getdata()
