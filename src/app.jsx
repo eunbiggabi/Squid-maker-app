@@ -1,5 +1,5 @@
 import { useState, useEffect, useReducer } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Header from "./components/header/navbar/navbar";
 import Home from "./pages/home/home";
 import Maker from "./pages/maker/maker";
@@ -13,14 +13,12 @@ import { StateContext } from "./utils/stateContext";
 import { userReducer } from "./utils/reducer";
 
 function App() {
-  let navigate = Navigate();
-
   const initialstate = {
     loggedInUser: sessionStorage.getItem("username") || null,
     auth: { token: sessionStorage.getItem("token") || null },
   };
 
-  const [store, dispatch] = useReducer(userReducer, initialstate);
+  const [store, userDispatch] = useReducer(userReducer, initialstate);
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -73,7 +71,7 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <StateContext.Provider value={{ store, dispatch }}>
+      <StateContext.Provider value={{ store, userDispatch }}>
         <BrowserRouter>
           <Header />
           <Routes>

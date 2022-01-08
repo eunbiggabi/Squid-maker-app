@@ -10,25 +10,28 @@ import {
   LogoName,
 } from "./navbar.styled";
 import { useGlobalState } from "../../../utils/stateContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { store, dispatch } = useGlobalState();
+  const { store, userDispatch } = useGlobalState();
   const { loggedInUser } = store;
+  const navigate = useNavigate();
 
   function logout(e) {
     e.preventDefault();
     console.log("log out");
     sessionStorage.clear();
     // activateUser("");
-    dispatch({
+    userDispatch({
       type: "setLoggedInUser",
       data: "",
     });
-    dispatch({
+    userDispatch({
       type: "setToken",
       data: "",
     });
+    navigate("/home");
   }
 
   return (

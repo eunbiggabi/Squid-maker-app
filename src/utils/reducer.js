@@ -17,3 +17,15 @@ export function userReducer(state, action) {
     }
   }
 }
+
+
+// export function cardReducer(state, action) {
+//     switch (action.type) {
+//         case ""
+//     }
+// }
+
+// return{
+//     ...state,
+//     messageList:[action.data, ...state.messageList]
+// }

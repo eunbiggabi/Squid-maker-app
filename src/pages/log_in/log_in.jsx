@@ -2,11 +2,15 @@ import { useGlobalState } from "../../utils/stateContext";
 import { logIn } from "../../services/authServices";
 import { useState } from "react";
 import styles from "./log_in.module.css";
+import { useLocation, useNavigate } from "react-router-dom";
 
-export default function LogIn() {
-  const { dispatch } = useGlobalState();
+export default function LogIn({ history }) {
+  const { store, userDispatch } = useGlobalState();
+  const { loggedInUser } = store;
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-  console.log();
+  console.log(history);
   const initialFormData = {
     email: "",
     password: "",
@@ -24,22 +28,30 @@ export default function LogIn() {
   function handleSubmit(e) {
     e.preventDefault();
     logIn(formData)
-      .then(({ username, jwt }) => {
-        sessionStorage.setItem("username", username);
-        sessionStorage.setItem("token", jwt);
-        dispatch({
-          type: "setLoggedInUser",
-          data: username,
-        });
-        dispatch({
-          type: "setToken",
-          data: jwt,
-        });
+      .then((user) => {
+        if (user.error) {
+          setError(user.error);
+        } else {
+          sessionStorage.setItem("username", user.username);
+          sessionStorage.setItem("token", user.jwt);
+          userDispatch({
+            type: "setLoggedInUser",
+            data: user.username,
+          });
+          userDispatch({
+            type: "setToken",
+            data: user.jwt,
+          });
+          if (!loggedInUser) {
+            return navigate("/maker");
+          }
+        }
       })
-      .catch((error) => console.log(error));
-
-    return;
+      .catch((error) => {
+        console.log(error);
+      });
   }
+
 
   return (
     <form className={styles.form} onClick={handleSubmit}>
