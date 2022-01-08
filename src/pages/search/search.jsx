@@ -6,7 +6,7 @@ import SearchInfo from "./search_info/search_info";
 
 export default function Search({ cards }) {
   const [searched, setSearched] = useState("");
-  const [searchedCard, setSearchedCard] = useState([]);
+  // const [searchedCard, setSearchedCard] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState([]);
@@ -55,21 +55,11 @@ export default function Search({ cards }) {
   return (
     <section className={styles.search}>
       <SearchHeader onSearch={onSearch} />
+      <p className={styles.notice}>Only "kyu", "Chloe, "Mike" are searchable</p>
       {/* {loading && <div>Loading...</div>} */}
       {error && <div className={styles.error}>{error}</div>}
       {searched &&
-        searchTerm.map((card) => (
-          <SearchInfo
-            key={card.id}
-            card={card}
-            cards={cards}
-            onSearch={onSearch}
-            searched={searched}
-            searchedCard={searchedCard}
-            searchTerm={searchTerm}
-          />
-        ))}
-      {/* <p>why not {searchedCard}</p> */}
+        searchTerm.map((card) => <SearchInfo key={card.id} card={card} />)}
     </section>
   );
 }
