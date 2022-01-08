@@ -8,8 +8,8 @@ export default function Search({ cards }) {
   const [searched, setSearched] = useState([]);
   const [searchedCard, setSearchedCard] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const url = `http://localhost:8000/cards/${searched}`;
+  const [error, setError] = useState([]);
+  const url = `http://localhost:7000/cards/${searched}`;
 
   const onSearch = (card) => {
     const index = cards.findIndex((item) =>
@@ -22,21 +22,21 @@ export default function Search({ cards }) {
     }
   };
 
-  useEffect(() => {
-    axios
-      .get(url)
-      .then((response) => {
-        setSearchedCard(response.data);
-        console.log(response.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, [url]);
+  // useEffect(() => {
+  //   axios
+  //     .get(url)
+  //     .then((response) => {
+  //       setSearchedCard(response.data);
+  //       console.log(response.data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       setError(err);
+  //     })
+  //     .finally(() => {
+  //       setLoading(false);
+  //     });
+  // }, [url]);
 
   return (
     <section className={styles.search}>

@@ -3,7 +3,7 @@ import styles from './card.module.css'
 
 export default function Card({card}) {
   const DEFAULT_IMAGE = "/images/defualt.jpg"
-  const {name, company, title, email, message, theme, fileName, fileURL} = card;
+  const {name, company, title, email, message, theme, fileURL} = card;
   const url = fileURL || DEFAULT_IMAGE;
   return (
     <li className={`${styles.card} ${getStyles(theme)}`}>
@@ -27,7 +27,5 @@ function getStyles(theme) {
       return styles.light;
     case 'colorful':
       return styles.colorful;
-    default:
-      throw new Error(`unknown theme: ${theme}`);
   }
 }

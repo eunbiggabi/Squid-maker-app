@@ -22,6 +22,8 @@ export default function CardAddForm({ onAdd }) {
       title: titleRef.current.value || "",
       email: emailRef.current.value || "",
       message: messageRef.current.value || "",
+      fileName: "",
+      fileURL: "",
     };
     formRef.current.reset();
     onAdd(card);
@@ -73,9 +75,9 @@ export default function CardAddForm({ onAdd }) {
         name="message"
         placeholder="Message"
       ></textarea>
-      <div className={styles.fileInput}>
+      {/* <div className={styles.fileInput}>
         <ImageFileInput />
-      </div>
+      </div> */}
       <Button name="Add" onClick={onSubmit} />
     </form>
   );
