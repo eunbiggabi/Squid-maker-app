@@ -1,5 +1,6 @@
 import { useState, useEffect, useReducer } from "react";
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 import Header from "./components/header/navbar/navbar";
 import Home from "./pages/home/home";
 import Maker from "./pages/maker/maker";
@@ -24,30 +25,30 @@ function App() {
   const [error, setError] = useState("");
   const url = "http://localhost:7000/cards";
 
-  useEffect(() => {
-    getdata()
-      .then((cards) => {
-        console.log(cards);
-        setCards(cards);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
   // useEffect(() => {
-  //   axios
-  //     .get(url)
-  //     .then((response) => {
-  //       setCards(response.data);
+  //   getdata()
+  //     .then((cards) => {
+  //       console.log(cards);
+  //       setCards(cards);
   //     })
-  //     .catch((err) => {
-  //       setError(err);
-  //     })
-  //     .finally(() => {
-  //       setLoading(false);
+  //     .catch((error) => {
+  //       console.log(error);
   //     });
-  // }, [url]);
+  // }, []);
+
+  useEffect(() => {
+    axios
+      .get(url)
+      .then((response) => {
+        setCards(response.data);
+      })
+      .catch((err) => {
+        setError(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [url]);
 
   const addCard = (card) => {
     const updated = [...cards, card];
