@@ -31,23 +31,23 @@ export default function Navbar() {
       type: "setToken",
       data: "",
     });
-    navigate("/home");
+    navigate("/maker");
   }
 
   return (
     <Nav>
       <NavbarLogoContainer>
         <Logo src="images/squid.png" alt="logo" />
-        <LogoName href="/home">Squid Maker</LogoName>
+        <LogoName href="/">Squid Maker</LogoName>
       </NavbarLogoContainer>
 
       <Menu isOpen={isOpen}>
-        <MenuLink href="/home">Home</MenuLink>
+        <MenuLink href="/">Home</MenuLink>
         <MenuLink href="/maker">Maker</MenuLink>
         <MenuLink href="/search">Search</MenuLink>
         {loggedInUser ? (
           <>
-            <MenuLink href="/home" onClick={logout}>
+            <MenuLink href="/" onClick={logout}>
               LogOut
             </MenuLink>
           </>
