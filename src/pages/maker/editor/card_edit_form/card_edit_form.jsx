@@ -14,12 +14,15 @@ export default function CardEditForm({ card, updateCard, deleteCard }) {
   const { name, company, title, email, message, theme } = card;
 
   const onChange = (event) => {
-    if (event.currentTarget == null){
+    if (event.currentTarget == null) {
       return;
     }
     event.preventDefault();
-    updateCard({...card, [event.currentTarget.name]: event.currentTarget.value,})
-  }
+    updateCard({
+      ...card,
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
+  };
 
   const onSubmit = () => {
     deleteCard(card);
