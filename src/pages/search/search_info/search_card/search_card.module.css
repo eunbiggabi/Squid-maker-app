@@ -8,7 +8,19 @@
   margin-bottom: 1em;
   padding: 0.2em 0;
   box-shadow: 6px 6px 8px 0px makerShadow;
-  background-color: makerAccent;
+}
+
+.card.dark {
+  background-color: makerBlack;
+  color: makerWhite;
+}
+
+.card.light {
+  background-color: makerWhite;
+  color: makerBlack;
+}
+.card.colorful {
+  background: makerColorful;
 }
 
 .avatar {
