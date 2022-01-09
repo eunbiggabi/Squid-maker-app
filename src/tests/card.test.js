@@ -2,6 +2,7 @@ import { fireEvent, getByTestId, render, queryByTestId } from "@testing-library/
 import { act } from "react-dom/test-utils";
 import SearchCard from "../pages/search/search_info/search_card/search_card";
 import Card from "../pages/maker/preview/card/card";
+import Search from "../pages/search/search";
 
 
 describe("Card Component", () => {
@@ -38,4 +39,10 @@ describe("Card Component", () => {
     const searchCard = getByTestId("searchCard");
     expect(searchCard).toBeTruthy();
   });
+
+  // it("render card if it exist", () => {
+  //   const { getByTestId } = render(<Search />);
+  //   const input = getByTestId("divWeWantToShow");
+  //   expect(input).toBeTruthy();
+  // });
 });

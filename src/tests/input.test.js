@@ -5,7 +5,7 @@ import SearchCard from "../pages/search/search_info/search_card/search_card";
 import CardAddForm from "../pages/maker/editor/card_add_form/card_add_form";
 import CardEditForm from "../pages/maker/editor/card_edit_form/card_edit_form";
 
-describe("Form Component", () => {
+describe("Input Component", () => {
   it("rendered add form", () => {
     const { getByTestId } = render(<CardAddForm />);
     const form = getByTestId("addForm");
