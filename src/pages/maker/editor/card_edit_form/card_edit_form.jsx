@@ -26,7 +26,7 @@ export default function CardEditForm({ card, updateCard, deleteCard }) {
   };
 
   return (
-    <form className={styles.form}>
+    <form className={styles.form} data-testid="editForm">
       <input
         className={styles.input}
         type="text"
