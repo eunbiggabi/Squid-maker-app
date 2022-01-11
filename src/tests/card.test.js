@@ -3,6 +3,7 @@ import { act } from "react-dom/test-utils";
 import SearchCard from "../pages/search/search_info/search_card/search_card";
 import Card from "../pages/maker/preview/card/card";
 import Search from "../pages/search/search";
+import SearchHeader from "../pages/search/search_header/search_header";
 
 
 describe("Card Component", () => {
@@ -40,9 +41,13 @@ describe("Card Component", () => {
     expect(searchCard).toBeTruthy();
   });
 
-  // it("render card if it exist", () => {
-  //   const { getByTestId } = render(<Search />);
-  //   const input = getByTestId("divWeWantToShow");
-  //   expect(input).toBeTruthy();
+  // it("render card if it exist", async() => {
+  //   await act(async() => {
+  //     const input = "kyu"
+  //     const { getByTestId } = render(<SearchHeader onSearch={input}/>);
+  //     const search = getByTestId("searchButton");
+  //     await fireEvent.click(search)
+  //     expect(getByTestId("searchButton")).toBeTruthy();
+  //   });
   // });
 });
