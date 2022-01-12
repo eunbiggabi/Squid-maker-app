@@ -1,13 +1,25 @@
-@value makerWhite, makerNavbar, makerAccent from '../../common/colors.css';
+@value makerWhite, makerNavbar, makerAccent, makerGreen from '../../common/colors.css';
 @value mediaQuery from '../../common/size.css';
 
 .home {
+  width: 100%;
+  height: 100vh;
+  padding: 7em 5em;
+  text-align: center;
+}
+
+.home_container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding: 0 3em;
-  text-align: center;
+  flex: 2 1 auto;
+}
+
+.info {
+  width: 100%;
+  text-align: start;
+  padding-left: 2em;
+  /* flex-basis: auto; */
 }
 
 .home_image {
@@ -31,8 +43,25 @@
   cursor: pointer;
 }
 
+.home_description {
+  color: makerGreen;
+}
+
 @media screen and (max-width: mediaQuery) {
+  .home {
+    height: auto;
+    padding: 2em;
+  }
+
+  .home_container {
+    flex-direction: column;
+  }
+
   .home_image {
     width: 100%;
+  }
+
+  .info {
+    padding: 2em;
   }
 }
