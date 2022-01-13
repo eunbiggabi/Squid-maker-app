@@ -23,7 +23,7 @@ function App() {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  // const url = "https://kyusquid-api.herokuapp.com/";
+  // const url = "https://kyusquid-api.herokuapp.com";
 
   useEffect(() => {
     getdata()
