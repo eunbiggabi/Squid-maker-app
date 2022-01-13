@@ -23,7 +23,6 @@ function App() {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  // const url = "https://kyusquid-api.herokuapp.com";
 
   useEffect(() => {
     getdata()
@@ -35,20 +34,6 @@ function App() {
         console.log(error);
       });
   }, []);
-
-  // useEffect(() => {
-  //   axios
-  //     .get(url)
-  //     .then((response) => {
-  //       setCards(response.data);
-  //     })
-  //     .catch((err) => {
-  //       setError(err);
-  //     })
-  //     .finally(() => {
-  //       setLoading(false);
-  //     });
-  // }, [url]);
 
   const addCard = (card) => {
     const updated = [...cards, card];
