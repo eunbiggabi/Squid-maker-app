@@ -30,7 +30,7 @@ export default function CardAddForm({ onAdd }) {
   };
 
   return (
-    <form ref={formRef} className={styles.form}>
+    <form ref={formRef} className={styles.form} data-testid="addForm">
       <input
         ref={nameRef}
         className={styles.input}

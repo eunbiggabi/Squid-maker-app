@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const squidMakerAPI = axios.create({
-  baseURL: 'http://localhost:3000'
+  baseURL: 'https://kyusquid-api.herokuapp.com'
 })
 
 export default squidMakerAPI;

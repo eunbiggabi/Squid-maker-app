@@ -22,7 +22,7 @@ export default function Search({ cards }) {
       if (card === "") {
         return "";
       } else if (
-        item.name.toLocaleLowerCase().includes(card.toLocaleLowerCase())
+        item.name.toLowerCase().includes(card.toLowerCase())
       ) {
         console.log(item);
         return item;

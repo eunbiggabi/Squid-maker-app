@@ -20,67 +20,35 @@ function App() {
   };
 
   const [store, userDispatch] = useReducer(userReducer, initialstate);
-  const [cards, setCards] = useState([ {
-    "id": 1,
-    "name": "Kyu",
-    "company": "Google",
-    "theme": "light",
-    "title": "Software developer",
-    "email": "kyu@email.com",
-    "message": "go for it",
-    "fileName": "kyu",
-    "fileURL": "https://i.imgur.com/LIRHSsi.jpg"
-  },
-  {
-    "id": 2,
-    "name": "Chloe",
-    "company": "Samsung",
-    "theme": "dark",
-    "title": "Admin",
-    "email": "chloe@email.com",
-    "message": "let's go",
-    "fileName": "chloe",
-    "fileURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-  },
-  {
-    "id": 3,
-    "name": "Mike",
-    "company": "Coles",
-    "theme": "colorful",
-    "title": "Sales",
-    "email": "mike@email.com",
-    "message": "oh no~!",
-    "fileName": "mike",
-    "fileURL": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-  }]);
+  const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const url = "http://localhost:7000/cards";
-
-  // useEffect(() => {
-  //   getdata()
-  //     .then((cards) => {
-  //       console.log(cards);
-  //       setCards(cards);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
+  // const url = "https://kyusquid-api.herokuapp.com/";
 
   useEffect(() => {
-    axios
-      .get(url)
-      .then((response) => {
-        setCards(response.data);
+    getdata()
+      .then((cards) => {
+        console.log(cards);
+        setCards(cards);
       })
-      .catch((err) => {
-        setError(err);
-      })
-      .finally(() => {
-        setLoading(false);
+      .catch((error) => {
+        console.log(error);
       });
-  }, [url]);
+  }, []);
+
+  // useEffect(() => {
+  //   axios
+  //     .get(url)
+  //     .then((response) => {
+  //       setCards(response.data);
+  //     })
+  //     .catch((err) => {
+  //       setError(err);
+  //     })
+  //     .finally(() => {
+  //       setLoading(false);
+  //     });
+  // }, [url]);
 
   const addCard = (card) => {
     const updated = [...cards, card];
