@@ -65,6 +65,7 @@ export default function LogIn({ history }) {
           value={formData.email}
           placeholder="email"
           onChange={handleFormData}
+          data-testid="email"
         />
         <input
           className={styles.input}
@@ -74,6 +75,7 @@ export default function LogIn({ history }) {
           value={formData.password}
           placeholder="passward"
           onChange={handleFormData}
+          data-testid="password"
         />
         <button className={styles.btn}>Log In</button>
       </div>

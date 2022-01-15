@@ -6,7 +6,7 @@
 // https://on.cypress.io/writing-first-test
 
 
-describe('My First Test', () => {
+describe('Home', () => {
     beforeEach(() => {
       // Cypress starts out with a blank slate for each test
       // so we must tell it to visit our website with the `cy.visit()` command.
@@ -15,8 +15,12 @@ describe('My First Test', () => {
       cy.visit('https://epic-curie-8e15c5.netlify.app')
   })
 
+  it("Title", () => {
+    cy.title().should('include', 'Squid Maker')
+  })
+
   it("Link Test", () => {
-    // cy.get('.home_home_maker__WpMCR').click()
-    cy.get('.home_info')
+    cy.get('.home_home_maker__WpMCR').click()
   })
 })
+

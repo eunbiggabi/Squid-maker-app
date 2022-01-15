@@ -4255,6 +4255,14 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
+data-cy@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/data-cy/-/data-cy-0.0.7.tgz#cccd167596063fb2a9dd82e620107b77810bf9d1"
+  integrity sha512-H5CVYnqsXDzVrwMKPQ7JRH2izOWbQOv+7uL+xZjyVbxt8/SuE39St9C2U1Q6sFzdcH1kUElCKjgkGc3jQBlqzw==
+  dependencies:
+    js-kebab-case "^0.0.6"
+    react-get-inner-text "^0.0.1"
+
 data-urls@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/data-urls/-/data-urls-2.0.0.tgz#156485a72963a970f5d5821aaf642bef2bf2db9b"
@@ -7163,6 +7171,11 @@ jest@26.6.0:
     import-local "^3.0.2"
     jest-cli "^26.6.0"
 
+js-kebab-case@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/js-kebab-case/-/js-kebab-case-0.0.6.tgz#b4e67ea0125668388d21759285e2e3345636e178"
+  integrity sha512-BGRiRHQezIeJlO7D7okBuZWw4Z0rHRouiFdf+1YaUpe7gUGCvzw6e/GXeBjVhxsXnOoBapA7S3vbiAnwD05twQ==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -9663,6 +9676,11 @@ react-file-base64@^1.0.3:
   integrity sha1-QXTvp5RFsTmQLswnMPxBfv55y4g=
   dependencies:
     react "^15.6.1"
+
+react-get-inner-text@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-get-inner-text/-/react-get-inner-text-0.0.1.tgz#c8de0aadd8970ddd511fabbf2e5ddae5bb07faab"
+  integrity sha512-pC6YzU5+eHkygsxdLJ5usVgLXFYiIZ6cB3bz1XLL3m8zVGaRVdpdJhyq86Y6b5BLzk3ZR03/8SsZpInKXx338g==
 
 react-icons@^4.3.1:
   version "4.3.1"
