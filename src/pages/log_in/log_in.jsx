@@ -65,6 +65,7 @@ export default function LogIn({ history }) {
           value={formData.email}
           placeholder="email"
           onChange={handleFormData}
+          data-testid="email"
         />
         <input
           className={styles.input}
@@ -74,8 +75,10 @@ export default function LogIn({ history }) {
           value={formData.password}
           placeholder="passward"
           onChange={handleFormData}
+          data-testid="password"
         />
         <button className={styles.btn}>Log In</button>
+        <p className={styles.notice}>Only able to log in "kyu1@email.com" and "kyu1" for password</p>
       </div>
     </form>
   );

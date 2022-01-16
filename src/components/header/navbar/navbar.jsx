@@ -42,7 +42,7 @@ export default function Navbar() {
       </NavbarLogoContainer>
 
       <Menu isOpen={isOpen}>
-        <MenuLink href="/">Home</MenuLink>
+        <MenuLink href="/" data-cy="homeLink">Home</MenuLink>
         <MenuLink href="/maker">Maker</MenuLink>
         <MenuLink href="/search">Search</MenuLink>
         {loggedInUser ? (

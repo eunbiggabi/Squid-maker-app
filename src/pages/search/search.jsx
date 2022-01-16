@@ -1,15 +1,13 @@
 import styles from "./search.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SearchHeader from "./search_header/search_header";
 import SearchInfo from "./search_info/search_info";
-// import axios from "axios";
 
 export default function Search({ cards }) {
   const [searched, setSearched] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState([]);
-  // const url = `http://localhost:7000/cards/${searched}`;
 
   const onSearch = (card) => {
     console.log(card);
@@ -35,27 +33,10 @@ export default function Search({ cards }) {
     }
   };
 
-  // useEffect(() => {
-  //   axios
-  //     .get(url)
-  //     .then((response) => {
-  //       setSearchedCard(response.data);
-  //       console.log(response.data);
-  //       setLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       setError(err);
-  //     })
-  //     .finally(() => {
-  //       setLoading(false);
-  //     });
-  // }, [url]);
-
   return (
     <section className={styles.search}>
       <SearchHeader onSearch={onSearch} />
       <p className={styles.notice}>Only "Kyu", "Chloe, "Mike" are searchable</p>
-      {/* {loading && <div>Loading...</div>} */}
       {error && <div className={styles.error}>{error}</div>}
       {searched &&
         searchTerm.map((card) => <SearchInfo key={card.id} card={card} />)}
