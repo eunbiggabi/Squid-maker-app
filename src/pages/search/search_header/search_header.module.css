@@ -1,0 +1,55 @@
+@value makerAccent, makerWhite, makerWhiteGrey, makerGreen from '../../../common/colors.css';
+@value mediaQuery from '../../../common/size.css';
+
+.search {
+  display: flex;
+  height: 12rem;
+  padding: 1.3em 1em;
+  background: makerGreen;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.input {
+  flex-basis: 100%;
+  font-size: 1.2rem;
+  outline: 0;
+  margin-bottom: 1rem;
+}
+
+.logo_container,
+.input,
+.button {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.button {
+  background-color: makerWhiteGrey;
+  color: makerBlack;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5em;
+  flex: 1 1 20%;
+  font-size: 1rem;
+  outline: none;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .search {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
