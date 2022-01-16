@@ -6,15 +6,5 @@ describe('Maker', () => {
   it("Form display", () => {
     cy.get('.card_edit_form_form__heWt-')
   })
-
-  // it("Form input"), () => {
-  //   cy.get('.card_edit_form_input__dEfDQ')
-  // }
-
-  it("Card display"), () => {
-    cy.get('.card_card__32Val card_colorful__1qvMg')
-  }
-
-
 })
 

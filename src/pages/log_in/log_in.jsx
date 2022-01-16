@@ -78,6 +78,7 @@ export default function LogIn({ history }) {
           data-testid="password"
         />
         <button className={styles.btn}>Log In</button>
+        <p className={styles.notice}>Only able to log in "kyu1@email.com" and "kyu1" for password</p>
       </div>
     </form>
   );

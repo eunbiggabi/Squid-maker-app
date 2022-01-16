@@ -2,14 +2,10 @@ import React, { useState } from "react";
 import { useGlobalState } from "../../utils/stateContext";
 import { signUp } from "../../services/authServices";
 import styles from "./sign_up.module.css";
-import { useNavigate } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
 
 export default function SignUp({ history }) {
   const { store, userDispatch } = useGlobalState();
   const [error, setError] = useState("");
-  const navigate = useNavigate();
-  const { loggedInUser } = store;
 
   console.log(history);
   const initialFormData = {

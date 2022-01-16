@@ -2,7 +2,7 @@ import styles from './search_card.module.css'
 
 export default function SearchCard({card}) {
   const DEFAULT_IMAGE = "/images/defualt.jpg"
-  const {name, company, title, email, message, theme, fileName, fileURL} = card;
+  const {name, company, title, email, message, theme, fileURL} = card;
   const url = fileURL || DEFAULT_IMAGE;
   return (
     <li className={`${styles.card} ${getStyles(theme)}`} data-testid="searchCard">
